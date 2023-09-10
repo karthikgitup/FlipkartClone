@@ -1,0 +1,16 @@
+.categorybar{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.categorybar-img{
+    width: 70px;
+    
+}
+.categorybar-title{
+    width: 100%;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 4px 0;
+}
