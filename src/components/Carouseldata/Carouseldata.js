@@ -2,10 +2,9 @@ import React from 'react'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
+import '../Carouseldata/Carouseldata.css';
 const Next = (props) => {
     const { className, onClick } = props;
     return (

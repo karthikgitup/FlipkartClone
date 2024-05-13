@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "../home/home.css";
 import {CategoryBarData,CarouselData,BestOf} from '../../data';
 import Categorybardata from '../../components/Categorybardata/Categorybardata';
@@ -6,6 +6,11 @@ import Carouseldata from '../../components/Carouseldata/Carouseldata';
 import ProductCarousel from '../../components/Productcarousel/Productcarousel';
 
 const Home = () => {
+useEffect(()=>{
+  
+
+},[])
+
   return (
     <div className="home">
       <div className='home-categorycontainer'>
@@ -24,7 +29,7 @@ const Home = () => {
             <Carouseldata datas={CarouselData}/>
 
           </div>
-          <div className='home-productcarousel'>
+           <div className='home-productcarousel'>
           <ProductCarousel
             BgImg={
               "https://rukminim1.flixcart.com/fk-p-flap/278/278/image/7593e7b6640822c1.jpg?q=90"
@@ -52,9 +57,9 @@ const Home = () => {
             }
             Title="Wedding & Gifting Specials"
             Data={BestOf.Electronics}
-          />
+          /> 
 
-          </div>
+           </div> 
 
         </div>
 

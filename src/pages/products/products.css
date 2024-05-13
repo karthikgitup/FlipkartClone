@@ -75,11 +75,13 @@
     letter-spacing: 1px;
   }
   .sort-by {
-    padding: 15px 0;
+    padding: 15px 0px;
     display: flex;
   }
   .sort-by > p {
     font-size: 15px;
+  margin-top: -10px;
+    
   }
   .sortitems {
     display: flex;

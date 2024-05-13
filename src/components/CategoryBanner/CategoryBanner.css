@@ -5,12 +5,14 @@
     max-height: 366px;
     background: white;
     text-align: center;
+   
   }
   .CategoryBanner-img {
     width: 200px;
     height: 170px;
     cursor: pointer;
     object-fit: contain;
+    transition: ease-in-out 0.3s;
   }
   .CategoryBanner-title {
     padding: 15px 0;

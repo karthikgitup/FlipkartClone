@@ -1,7 +1,7 @@
 import React from 'react';
 import "./CategoryBanner.css";
 
-const CategoryBanner = ({ImgSrc,Title,Brand}) => {
+const CategoryBanner = ({ImgSrc,Title,price}) => {
   return (
     <div className='CategoryBanner'>
         <img src={ImgSrc} className='CategoryBanner-img'/>
@@ -10,7 +10,7 @@ const CategoryBanner = ({ImgSrc,Title,Brand}) => {
 
         </p>
         <p className='CategoryBanner-shopnow'>Shop NOw!</p>
-        <p className='CategoryBanner-Brands'>{Brand}</p>
+        <p className='CategoryBanner-Brands'>{price}</p>
     </div>
   )
 }

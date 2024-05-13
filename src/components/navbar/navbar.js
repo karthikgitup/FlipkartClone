@@ -1,33 +1,30 @@
-import React, { useEffect, useState } from 'react';
 import "../navbar/navbar.css"
 import { IoSearch } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
 import {Link} from 'react-router-dom';
 import Loginmodel from './loginmodel/Loginmodel';
-import { useSelector ,useDispatch} from 'react-redux';
-import { onAuthStateChanged,signOut } from 'firebase/auth';
-import {auth} from '../../config/firebase';
-import { removeUser,setUser } from '../../slices/userSlices';
+import { useDispatch } from 'react-redux';
+import { setLoginPageOpen } from '../../slices/userSlices';
+import { useSelector } from 'react-redux';
+
+
 
 const Navbar = () => {
-const [isopen,setIsopen]=useState(false);
-const user=useSelector((state)=>state.userData.user);
-//  const dispatch=useDispatch();
-console.log(user);
-useEffect(()=>{
-  if(user){
-    setIsopen(false);
-  }
-});
-const signOuts=()=>{
-  signOut(auth);
+const dispatch=useDispatch();
+var  isuser=sessionStorage.getItem("user");
+const datas=useSelector((state)=>state.userData);
+if(isuser!=null){
+  dispatch(setLoginPageOpen(false));
 
- }
+}else{
+  dispatch(setLoginPageOpen(true));
+}
+
+  
 
 
 
-    
 
 
   return (
@@ -39,7 +36,7 @@ const signOuts=()=>{
           <input type="text" placeholder='search for products,brands and more' className='navbar-searchbox'/>
           <button className='navbar-searchbtn'><IoSearch/></button>
         </div>
-       {user?(<h3 onClick={signOuts} >@{user?.email.slice(0,10)}</h3>):( <button className='navbar-btn' onClick={()=>setIsopen(true)}>Login</button>)}
+       {!datas.isloginpageopen ? (<h3 >@{isuser?.slice(0,5)}</h3>) : ( <button className='navbar-btn' >Login</button>)}
         <div className='navbar-bcs'>
           <h3>Become a seller</h3>
         </div>
@@ -54,7 +51,7 @@ const signOuts=()=>{
 
         
       </div>
-      <Loginmodel isopen={isopen} setIsopen={setIsopen} />
+      <Loginmodel  />
     </div>
     </>
   )
